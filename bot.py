@@ -13,8 +13,6 @@ def findat(msg):
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-  st = pyspeedtest.SpeedTest()
-  speed = st.ping()
     bot.reply_to(message, "tezlik")
 
 @bot.message_handler(commands=['help']) # help message handler
