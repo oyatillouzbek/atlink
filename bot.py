@@ -15,10 +15,9 @@ def findat(msg):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
   start = datetime.now()
-  bot.reply_to(message, "tezlik")
   end = datetime.now()
   ms = (end - start).microseconds / 1000
-  bot.reply_to(message, "tezlik" + ms)
+  bot.reply_to(message, ms)
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
     bot.reply_to(message, 'ALPHA = FEATURES MAY NOT WORK')
