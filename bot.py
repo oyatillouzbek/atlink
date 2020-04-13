@@ -15,7 +15,7 @@ def findat(msg):
 def send_welcome(message):
   st = pyspeedtest.SpeedTest()
   speed = st.ping()
-    bot.reply_to(message, "tezlik" + speed)
+    bot.reply_to(message, "tezlik")
 
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
