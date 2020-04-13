@@ -1,5 +1,6 @@
 import time
 import telebot
+import pyspeedtest
 
 TOKEN = "959057540:AAGxP6uZQQOjffAjujs3-PLQuLowv6QB3Os"
 bot = telebot.TeleBot(token=TOKEN)
@@ -11,8 +12,10 @@ def findat(msg):
             return i
 
 @bot.message_handler(commands=['start']) # welcome message handler
+st = pyspeedtest.SpeedTest()
+sped = st.ping()
 def send_welcome(message):
-    bot.reply_to(message, '(placeholder text)')
+    bot.reply_to(message, 'tezlik ' + sped)
 
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
