@@ -1,6 +1,7 @@
 import time
 import telebot
 import pyspeedtest
+from datetime import datetime
 
 TOKEN = "959057540:AAGxP6uZQQOjffAjujs3-PLQuLowv6QB3Os"
 bot = telebot.TeleBot(token=TOKEN)
@@ -13,8 +14,11 @@ def findat(msg):
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "tezlik")
-
+  start = datetime.now()
+  bot.reply_to(message, "tezlik")
+  end = datetime.now()
+  ms = (end - start).microseconds / 1000
+  bot.edit_message_text(chat_id=message.chat.id, message_id=message.message_id, text="tezlik: " + ms)
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
     bot.reply_to(message, 'ALPHA = FEATURES MAY NOT WORK')
