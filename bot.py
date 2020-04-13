@@ -11,10 +11,10 @@ def findat(msg):
         if '@' in i:
             return i
 
-@bot.message_handler(commands=['start']) # welcome message handler
-st = pyspeedtest.SpeedTest()
-sped = st.ping()
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
+  st = pyspeedtest.SpeedTest()
+  sped = st.ping()
     bot.reply_to(message, "tezlik" + sped)
 
 @bot.message_handler(commands=['help']) # help message handler
