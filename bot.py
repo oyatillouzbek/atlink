@@ -14,11 +14,13 @@ def findat(msg):
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
+  sped = "Tezlik: "
   start = datetime.now()
-  msge = bot.reply_to(message, "Tezlik: ")
+  msge = bot.reply_to(message, sped)
   end = datetime.now()
   ms = (end - start).microseconds / 1000
-  bot.edit_message_text(chat_id=msge.chat.id, message_id=msge.message_id,text="Tezlik :" + ms)
+  speed = sped + ms
+  bot.edit_message_text(chat_id=msge.chat.id, message_id=msge.message_id,text=speed)
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
     bot.reply_to(message, 'ALPHA = FEATURES MAY NOT WORK')
