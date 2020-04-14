@@ -18,7 +18,7 @@ def send_welcome(message):
   msge = bot.reply_to(message, "start")
   end = datetime.now()
   ms = (end - start).microseconds / 1000
-  bot.edit_message_text(ms, chat_id=messaage, message_id=msge.message_id)
+  bot.edit_message_text(chat_id=msge.chat.id, message_id=msge.message_id,text=ms)
 @bot.message_handler(commands=['help']) # help message handler
 def send_welcome(message):
     bot.reply_to(message, 'ALPHA = FEATURES MAY NOT WORK')
