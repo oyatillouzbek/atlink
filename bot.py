@@ -3,7 +3,7 @@ import telebot
 import pyspeedtest
 from datetime import datetime
 
-TOKEN = "token joyi"
+TOKEN = "1035357676:AAFH1-wzeTQ49SBgZ9pwGFWgyx4uxQb5ork"
 bot = telebot.TeleBot(token=TOKEN)
 
 def findat(msg):
